@@ -8,9 +8,9 @@ images_token = "MQvHECIuPeAjVcYO3sY3yp1-oMbxn9tiLMI1PUDi"
 images_account_id = "d6850012d250c1600028b55d1d879b16"
 
 #CHANGE these are your value from your workers environment
-kv_id = "1162c3780e6d4756946c2df99b4b7342"
-kv_account_id = "d6850012d250c1600028b55d1d879b16"
-kv_token ="MQvHECIuPeAjVcYO3sY3yp1-oMbxn9tiLMI1PUDi"
+kv_id = "ENTER YOU WORKERS KV NAMESPACE ID"
+kv_account_id = "ENTER YOUR CLOUDFLARE ACCOUNT ID"
+kv_token ="ENTER YOUR API TOKEN"
 
 
 base_url = "api.cloudflare.com/client/v4"
@@ -38,7 +38,7 @@ for image in images :
     img_url = img_details["result"]["variants"][0]
     img_time = img_details["result"]["uploaded"]
 
-    #now we will build the data to insert into workers KV!
+    #now we will build the data to insert into workers KV! and push the information - this data will be read out by our web application and be presented on our Gallery page.
 
     kv_key = "image:uploaded:{}".format(img_time)
     kv_metadata = {
