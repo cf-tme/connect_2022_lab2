@@ -2,11 +2,16 @@ from email.mime import base
 import requests
 import json
 
-#Define api values (you do not need to change these unless you have your own Images account you want use)
 
-#this token will expire May 14th, 2022
+#DO NOT  CHANGE this token will expire May 14th, 2022
 images_token = "MQvHECIuPeAjVcYO3sY3yp1-oMbxn9tiLMI1PUDi"
 images_account_id = "d6850012d250c1600028b55d1d879b16"
+
+#CHANGE these are your value from your workers environment
+kv_id = "1162c3780e6d4756946c2df99b4b7342"
+kv_account_id = "d6850012d250c1600028b55d1d879b16"
+kv_token ="MQvHECIuPeAjVcYO3sY3yp1-oMbxn9tiLMI1PUDi"
+
 
 base_url = "api.cloudflare.com/client/v4"
 
@@ -34,10 +39,6 @@ for image in images :
     img_time = img_details["result"]["uploaded"]
 
     #now we will build the data to insert into workers KV!
-    #these are your value from your workers environment
-    kv_id = "1162c3780e6d4756946c2df99b4b7342"
-    kv_account_id = "d6850012d250c1600028b55d1d879b16"
-    kv_token ="MQvHECIuPeAjVcYO3sY3yp1-oMbxn9tiLMI1PUDi"
 
     kv_key = "image:uploaded:{}".format(img_time)
     kv_metadata = {
