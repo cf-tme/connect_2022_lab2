@@ -4,7 +4,7 @@ import json
 
 
 #DO NOT  CHANGE this token will expire May 14th, 2022
-images_token = "MQvHECIuPeAjVcYO3sY3yp1-oMbxn9tiLMI1PUDi"
+images_token = "HBLM44C_QELdwRGKxhCXRYy23PxfQEp0vuAYAGnl"
 images_account_id = "d6850012d250c1600028b55d1d879b16"
 
 #CHANGE these are your value from your workers environment
